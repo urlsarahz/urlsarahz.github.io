@@ -1,13 +1,13 @@
-body {
+html, body {
     background-color:aliceblue;
     font-family:'Times New Roman', Times, serif;
     font-size: 16px;
 }
 a {
+    color: blue
     text-decoration: none;
-    color: blue;
 }
 a:hover {
-    background-color: blue;
+    /* background-color: blue; */
     color: white;
 }
