@@ -1,14 +1,22 @@
+:root {
+    --green: #058530;
+    --pink: #FDC4EA;
+    --blue: #1639E9;
+    --white: #FEFBFD;
+    --black: #080206;
+}
+
 body {
-    background-color:aliceblue;
+    background-color:var(--white);
     font-family:'Times New Roman', Times, serif;
     font-size: 16px;
-    
+    color:var(--black);
 }
 a {
-    color: #0000FF;
+    color: var(--blue);
     text-decoration: none;
 }
 a:hover {
-    background-color: #0000FF;
-    color:#FFF;
+    background-color: var(--blue);
+    color: var(--white);
 }
