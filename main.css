@@ -4,10 +4,10 @@ html, body {
     font-size: 16px;
 }
 a {
-    color: blue
+    color: #0000FF
     text-decoration: none;
 }
 a:hover {
-    /* background-color: blue; */
-    color: white;
+    background-color: #0000FF;
+    color: #FFFFFF;
 }
