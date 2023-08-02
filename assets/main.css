@@ -20,3 +20,19 @@ a:hover {
     background-color: var(--blue);
     color: var(--white);
 }
+
+footer {
+    position: fixed;
+    bottom: 0.75em;
+    left: 1.25em;
+  
+    /* display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+      -webkit-flex-direction: row;
+  
+    gap: 0.5em; */
+  }
