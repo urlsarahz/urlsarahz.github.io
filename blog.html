@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<body>
+  <div id="no"> Well, that's awkward. </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+if (localStorage.getItem("love") !== null && (localStorage.getItem("love")).toLowerCase() == "yes") {
+  // ok
+} else {
+  let reveal = prompt("Do you believe you could love someone if you spent enough time with them?")
+
+  if (reveal.toLowerCase() == "yes" || reveal.toLowerCase() == "yeah") {
+    localStorage.setItem("love", "yes");
+    alert("I do, too.");
+  } else if (reveal.toLowerCase() == "maybe" || reveal.toLowerCase() == "idk" || reveal.toLowerCase() == "i don't know" || reveal.toLowerCase() == "i dont know") {
+   // window.location.href = "./maybe.html"; 
+    // redirect to "mayb" page
+  } else {
+    $("#no").fadeIn("slow").css("display", "flex");
+  }
+
+}
+</script>
