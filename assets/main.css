@@ -26,13 +26,14 @@ footer {
     bottom: 0.75em;
     left: 1.25em;
   
-    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     flex-flow: row wrap;
       -webkit-flex-direction: row;
+      flex-direction: row;
   
     gap: 2em; 
   }
