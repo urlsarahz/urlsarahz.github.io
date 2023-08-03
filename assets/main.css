@@ -5,15 +5,20 @@
     --white: #FEFBFD;
     --black: #080206;
 }
-
+::selection {
+    color: var(--pink);
+    text-shadow: 0 0 5px var(--pink);
+}
 body {
     background-color:var(--white);
     font-family:'Times New Roman', Times, serif;
+    text-rendering: optimizeLegibility;
     font-size: 16px;
     color:var(--black);
 }
 a {
     color: var(--blue);
+    opacity: 0.8;
     text-decoration: none;
 }
 a:hover {
