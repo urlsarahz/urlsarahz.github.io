@@ -1,27 +1,45 @@
 <!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="./assets/main.css" type="text/css">
+</head>
 <body>
-  <div id="no"> Well, that's awkward. </div>
-  <div id="containter">
-    
+  <!-- <div id="no"> <div id="no-text">We may not be right for each other<i> at this moment</i>.</div> </div> -->
+  <div id="container">
+    <p>this is a work in progress. please check back later!<br><br><br><br></p>
+    <p>todo...
+    <li>add scan & text content</li>
+    <li>code sidebar</li>
+    <li>code progress bar</li>
+    <li>fix overlay orz</li> </p>
   </div>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-if (localStorage.getItem("love") !== null && (localStorage.getItem("love")).toLowerCase() == "yes") {
-  // ok <3
-} 
-else {
-  let reveal = prompt("Do you believe you could love someone if you spent enough time with them?")
-
-  if (reveal.toLowerCase() == "yes" || reveal.toLowerCase() == "yeah") {
-    localStorage.setItem("love", "yes");
-    alert("I do, too.");
-  } else if (reveal.toLowerCase() == "maybe" || reveal.toLowerCase() == "idk" || reveal.toLowerCase() == "i don't know" || reveal.toLowerCase() == "i dont know") {
+  if (localStorage.getItem("love") == null || (localStorage.getItem("love")).toLowerCase() != "yes") {
+    let reveal = prompt("Do you believe you could love someone if you spent enough time with them?")
+    if (reveal.toLowerCase() == "yes" || reveal.toLowerCase() == "yeah") {
+      localStorage.setItem("love", "yes")
+      alert("I do, too.");
+    } 
+    else if (reveal.toLowerCase() == "maybe" || reveal.toLowerCase() == "idk" || reveal.toLowerCase() == "i don't know" || reveal.toLowerCase() == "i dont know") {
     window.location.href = "./blog/idk.html"; 
-  } else {
-    $("#no").fadeIn("slow").css("display", "flex");
-  }
+    }
+    else {
+      jQuery(document).ready(function() {  
+        var overlay = $('<div></div>');  
+        $("body").append(overlay);
+        overlay.fadeIn(2000).addClass('no');
 
-}
-</script>
+        var overlayText = $('<div>')
+        .html('<p>Some message here...</p>')
+        .addClass('no-text');
+        
+        overlay.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {     
+          $('body').append(overlayText);              
+        });              
+      });   
+    }
+  }
+  </script>
+</html>
