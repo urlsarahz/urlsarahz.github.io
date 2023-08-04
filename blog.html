@@ -3,14 +3,13 @@
   <link rel="stylesheet" href="./assets/main.css" type="text/css">
 </head>
 <body>
-  <!-- <div id="no"> <div id="no-text">We may not be right for each other<i> at this moment</i>.</div> </div> -->
   <div id="container">
     <p>this is a work in progress. please check back later!<br><br><br><br></p>
     <p>todo...
     <li>add scan & text content</li>
     <li>code sidebar</li>
-    <li>code progress bar</li>
-    <li>fix overlay orz</li> </p>
+    <li>code progress bar?</li>
+    <li><s>fix overlay orz</s></li> </p>
   </div>
 </body>
 
@@ -32,7 +31,7 @@
         overlay.fadeIn(2000).addClass('no');
 
         var overlayText = $('<div>')
-        .html('<p style="font-size:30px;">We may not be right for each other<i> at this moment</i>.</p>')
+        .html('<p style="font-size:30px;">We&nbsp;may&nbsp;not&nbsp;be right&nbsp;for&nbsp;each&nbspother<i> at&nbsp;this&nbsp;moment</i>.</p>')
         .addClass('no-text');
         
         overlay.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {     
