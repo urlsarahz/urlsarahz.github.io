@@ -70,11 +70,11 @@ footer {
   }
 
 .no-text {
-    position: absolute;
+    position: relative;
     top: 40%;
     left: 25%;
     text-align: center;           
-    width: 100%;
+    width: 50%;
     color:var(--black);
     z-index: 99999;
 
