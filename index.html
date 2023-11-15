@@ -1,11 +1,6 @@
 <!-- hi! welcome to the bts of my website, made by hand with love. ~sarahz ^_^ -->
 
-<!-- this site has taken inspiration from: -->
-<!-- https://laurel.world/ -->
-<!-- https://mindyseu.com/ -->
-<!-- https://chia.design/ -->
-<!-- https://www.spencerchang.me/ -->
-<!-- https://www.mengjieliu.com/ -->
+<!-- this site has taken inspiration from: https://laurel.world/, https://mindyseu.com/, https://chia.design/, https://www.spencerchang.me/, https://www.mengjieliu.com/ -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,22 +11,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sarah Zhang</title>
     <link rel="stylesheet" href="./assets/main.css" type="text/css">
+    <script src="./index.js"></script>
     <meta name="author" content="Sarah Zhang">
     <meta name="description" content="This is Sarah Zhang's personal website, (soon to be) a living compendium of her work and interests.">
     <link rel="icon" type="image/png" href="favicon.ico">
     <!-- todo: add open graph, twitter card metadata -->
 </head>
 
+
 <body>
-    <main>
-    <div>
-        <p>Sarah Zhang (b. 2006, CA) is a student with interests in biology, design, and computer science. </p>
-        <p>Contact me via <a href="mailto:sarahzg123@gmail.com">email (sarahzg123 at gmail dot com)</a>. </a></p>
+    <div id="page">
+        <div class="info scroll">
+            <div class="textt" style="font-size: .9em;">
+                Sarah Zhang (b. 2006, CA) is a student with interests in biology, design, and computer science. <br><br>
+                <input type="checkbox" id="contact"><label for="contact">Contact her</label> via carrier pigeon, a message in a bottle, dream telepathy, or simply email <a href="mailto:sarahzg123@gmail.com" target="_blank">(sarahzg123 at gmail dot com)</a>.
+                <p toggle><a href="https://instagram.com/plcdty" target="_blank">Instagram</a>, <a href="https://are.na/sarah-cdpqkvy8hui" target="_blank">Are.na</a>, <a href="https://github.com/urlsarahz" target="_blank">GitHub</a>.</p>
+            </div>
+            
+            
+            <!-- <section class="container">
+                <div id="settings">
+                    <label for="lineWidth">size</label><input id="size" name='size' type="range" value="5">
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <label for="opacity">opacity</label><input id="opacity" name='opacity' type="range" value="25" min="5" max="50">
+                    <button id="clear">clear</button>
+                </div>
+                <div class="sketch">
+                    <canvas id="formCloud"></canvas>
+                </div>
+            </section> -->
+
+            <!-- <div id="overlay"> -->
+                <div id="settings">
+                    <label for="lineWidth">size</label><input id="size" name='size' type="range" value="5">
+                    <label for="opacity">opacity</label><input id="opacity" name='opacity' type="range" value="25" min="2" max="50">
+                    <button id="clear">clear</button>
+                  </div>
+                <canvas id="formCloud"></canvas>
+                <!-- <button onclick="off()">send</button> -->
+            </div>
+              
+            <!-- <div>
+                <a name="draw" onclick="on()">go cloudwatching</a>
+            </div> -->
+        </div>
     </div>
 
     <footer>
         <p><a href="resume.pdf">Resume</a></p>
-        <p><a href="https://recordsof.love">Notes</a><p></p>
+        <p><a href="https://recordsof.love">Lab</a></p>
+        <p> <a href="https://urlsarahz.wordpress.com">Blog</a></p>
     </footer>
 </body>
+
 </html>
