@@ -12,6 +12,7 @@
   <style>
     summary{
         cursor: pointer;
+        font-size: 20px;
     }
     summary:hover{
         color: rgb(20, 255, 110);
@@ -27,7 +28,7 @@
   
   <!-- <audio id="bgm" src="" loop></audio> -->
 
-<div style="display: flex; flex-direction: column; 1em; padding: 1em;">
+<div style="display: flex; flex-direction: column; gap: 1em; padding: 1em;">
 <details open><summary>Issue 1: Say Something</summary><img style="border:1px solid green" src="issue1.png"></details>
 
 <details open><summary>Issue 2: Bay Slinging</summary><img style="border:1px solid green" src="issue2.png"></details>
@@ -49,14 +50,12 @@
 <script type="text/javascript">
   $(document).ready(function(){   
     $(".stickynote").each(function(){
-        let t = Math.floor(Math.random() * (20 - 5)) + 5
+        let t = Math.floor(Math.random() * (50 - 5)) + 5
         let l = Math.floor(Math.random() * (80 - 50)) + 50
 
         $(this).css({"left": l+"%", "top": t+"%" }).draggable();
     }) })
     
-    // $(function() {
-    // $(".stickynote").draggable();
-    // });}
+   
 </script>
 </html>
