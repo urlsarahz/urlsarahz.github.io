@@ -20,10 +20,10 @@ var canvas = document.getElementById("drawCloud");
   var color = "rgb(255, 255, 255)";
   
   //var sidebar = document.getElementById("info noscroll");
-  canvas.width = window.innerWidth-1065;
-  canvas.height = window.innerHeight-250;
-  // canvas.width = window.innerWidth - canvas.offsetLeft;
-  // canvas.height = window.innerHeight - canvas.offsetTop;
+  canvas.style.width ='100%'
+  canvas.style.height ='70%'
+  canvas.width = canvas.offsetWidth;
+  canvas.height =canvas.offsetHeight;
 
   var offscreenCanvas = document.createElement('canvas');
   var oc = offscreenCanvas.getContext("2d");
@@ -99,48 +99,34 @@ function sketch(e) {
 
 // save to disk
   function formCloud() {
-    let canvas = document.getElementById('drawCloud');
-    const blob = new Blob([canvas], {type:image/png});
-    const tmp = URL.createObjectURL(blob);
-    console.log(tmp);
-    
-    
-    // var canvas = document.getElementById("drawCloud");
-    // var newCloud = canvas.toDataURL("image/png");
-    // document.write('<img src="'+newCloud+'"/>');
+      function dataURLtoBlob(dataURL) {
+        let array, binary, i, len;
+        binary = atob(dataURL.split(',')[1]);
+        array = [];
+        i = 0;
+        len = binary.length;
+        while (i < len) {
+          array.push(binary.charCodeAt(i));
+          i++;
+        }
+        return new Blob([new Uint8Array(array)], {
+          type: 'image/png'
+        });
+      };
 
+    const canvas = document.getElementById('drawCloud');
+    const file = dataURLtoBlob(canvas.toDataURL());
+      
+    const fd = new FormData;
+    fd.append('image', file);
 
-
-    // let newCloud;
-
-    // const getCloud = () => new Promise((resolve, reject) => {
-    //   const canvas = document.getElementById("drawCloud");
-    //   canvas.toBlob(resolve, "image/png", 1);
-    // });
-
-    // const savee = async () => {
-    //   newCloud = await getCloud();
-    //   const blob = new Blob([newCloud], {
-    //     type: newCloud.type, //png
-    //   });
-    //   const blobURL = URL.createObjectURL(blob);
-    //   newCloud = blob;
-    //   post(blob);
-    // };
-
-    // function post() { 
-    //   $.ajax({
-    //     url:"./clouds",
-    //     success: function(ok) {
-    //       newCloud = URL.createObjectURL(newCloud);
-    //       let indexx;
-    //       $.get("./clouds", function (clouds) { //push newCloud
-    //         indexx = clouds.length - 1;
-    //         sky.storage.push(clouds[clouds.length - 1]);
-    //       });
-
-    //     }
-    //   })
-    // }
-    // savee();
+    $.ajax({
+        type: 'POST',
+        url: '/clouds',
+        data: fd,
+        processData: false,
+        contentType: false
+   });
   }
+
+  
