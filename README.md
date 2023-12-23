@@ -1,2 +1,2 @@
-### [urlsarahz.github.io](https://urlsarahz.github.io)
-hi, i'm sarah z and this is my main website ^_^
+### [recordsof.love](https://recordsof.love)
+hi, i'm sarah and this is my main website ^_^
