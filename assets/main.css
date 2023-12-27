@@ -85,9 +85,13 @@ img{
   width:21.5em;
   min-width:21.5em;
   background-color: rgb(252, 243, 249);
+  flex: 0 1 auto;
 }
 .stuff {
+  /* position:relative; */
   padding: 1em 1.5em 2.5em 1.5em;
+  flex: 1 1 auto;
+  background-color: var(--blue);
 }
 footer {
   position: fixed;
@@ -102,6 +106,7 @@ footer {
     -webkit-flex-direction: row;
     flex-direction: row;
   gap: 2em; 
+  z-index: 9999999999999;
 }
 footer * {
   display: inline-block;
@@ -114,7 +119,7 @@ footer * {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 /* TOGGLE cool trick! */
@@ -165,8 +170,8 @@ button:hover{
 
 #drawCloud {
   border-radius: 20px;
-  background-color: var(--pink);
-  border: 0.5px solid var(--pink);
+  /* background-color: var(--pink); */
+  /* border: 0.5px solid var(--pink); */
 } 
 #form{
   background-color: var(--white);
@@ -179,4 +184,31 @@ button:hover{
   text-shadow: 0 0 5px var(--pink);
   border:1px solid var(--white);;
   background-color:rgb(252, 243, 249);
+}
+
+#deadImg{
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+.hoverText{
+  position: absolute;
+  display: none;
+  transition: all 0.5s;
+  text-shadow:
+    -1px -1px 0 #fff,
+     0   -1px 0 #fff,
+     1px -1px 0 #fff,
+     1px  0   0 #fff,
+     1px  1px 0 #fff,
+     0    1px 0 #fff,
+    -1px  1px 0 #fff,
+    -1px  0   0 #fff;
+  font-size: 14px;
+  text-align: center;
+}
+#deadImg:hover + .hoverText{
+  display: block;
 }
